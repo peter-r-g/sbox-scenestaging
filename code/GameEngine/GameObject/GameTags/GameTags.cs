@@ -35,11 +35,13 @@ public class GameTags : ITagSet
 	/// <summary>
 	/// Returns true if this object has given tag.
 	/// </summary>
+	[Pure]
 	public bool Has( string tag ) => collection.Contains( tag );
 
 	/// <summary>
 	/// Returns true if this object has one or more tags from given tag list.
 	/// </summary>
+	[Pure]
 	public bool HasAny( HashSet<string> tagList )
 	{
 		return tagList.Any( x => Has( x ) );
