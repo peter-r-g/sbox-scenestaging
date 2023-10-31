@@ -9,7 +9,8 @@ public partial class GameObject
 	/// <summary>
 	/// Get the first matching component on this game object, optionally recurse when deep is true
 	/// </summary>
-	public BaseComponent GetComponent( Type type, bool enabledOnly = true, bool deep = false )
+	/// [Pure]
+	public BaseComponent GetComponent( Type type, [NodeProperty] bool enabledOnly = true, [NodeProperty] bool deep = false )
 	{
 		return GetComponents( type, enabledOnly, deep ).FirstOrDefault();
 	}
@@ -22,7 +23,7 @@ public partial class GameObject
 	/// <param name="deep"></param>
 	/// <returns></returns>
 	[Pure]
-	public T GetComponent<T>( bool enabledOnly = true, bool deep = false )
+	public T GetComponent<T>( [NodeProperty] bool enabledOnly = true, [NodeProperty] bool deep = false )
 	{
 		return GetComponents<T>( enabledOnly, deep ).FirstOrDefault();
 	}
@@ -35,7 +36,7 @@ public partial class GameObject
 	/// <param name="deep"></param>
 	/// <returns></returns>
 	[Pure]
-	public IEnumerable<T> GetComponents<T>( bool enabledOnly = true, bool deep = false )
+	public IEnumerable<T> GetComponents<T>( [NodeProperty] bool enabledOnly = true, [NodeProperty] bool deep = false )
 	{
 		var q = Components.Where( x => x is not null );
 		if ( enabledOnly ) q = q.Where( x => x.Active );
@@ -63,13 +64,13 @@ public partial class GameObject
 	/// Get a list of components on this game object, optionally recurse when deep is true
 	/// </summary>
 	[Pure]
-	public IEnumerable<BaseComponent> GetComponents( Type type, bool enabledOnly = true, bool deep = false )
+	public IEnumerable<BaseComponent> GetComponents( Type type, [NodeProperty] bool enabledOnly = true, [NodeProperty] bool deep = false )
 	{
 		return GetComponents<BaseComponent>( enabledOnly, deep ).Where( x => x.GetType().IsAssignableFrom( type ) );
 	}
 
 	[Pure]
-	public bool TryGetComponent<T>( out T component, bool enabledOnly = true, bool deep = false )
+	public bool TryGetComponent<T>( out T component, [NodeProperty] bool enabledOnly = true, [NodeProperty] bool deep = false )
 	{
 		component = GetComponent<T>( enabledOnly, deep );
 
@@ -80,7 +81,7 @@ public partial class GameObject
 	/// Find component on this gameobject, or its parents
 	/// </summary>
 	[Pure]
-	public T GetComponentInParent<T>( bool enabledOnly = true, bool andSelf = false )
+	public T GetComponentInParent<T>( [NodeProperty] bool enabledOnly = true, [NodeProperty] bool andSelf = false )
 	{
 		if ( andSelf )
 		{
@@ -152,7 +153,7 @@ public partial class GameObject
 		}
 	}
 
-	public T AddComponent<T>( bool enabled = true ) where T : BaseComponent, new()
+	public T AddComponent<T>( [NodeProperty] bool enabled = true ) where T : BaseComponent, new()
 	{
 		var t = new T();
 
@@ -164,7 +165,7 @@ public partial class GameObject
 		return t;
 	}
 
-	public BaseComponent AddComponent( TypeDescription type, bool enabled = true )
+	public BaseComponent AddComponent( TypeDescription type, [NodeProperty] bool enabled = true )
 	{
 		if ( !type.TargetType.IsAssignableTo( typeof( BaseComponent ) ) )
 			return null;
