@@ -1,0 +1,383 @@
+{
+  "GameObjects": [
+    {
+      "Id": "f8a04d54-f3d3-4569-933c-c9e4f7b2f660",
+      "Name": "Directional Light",
+      "Enabled": true,
+      "Position": "3319.142,2344.351,17629.04",
+      "Rotation": "0.1136377,-0.1786583,-0.9442306,-0.252184",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "DirectionalLightComponent",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Shadows": true,
+          "SkyColor": "0.05882,0.07451,0.08235,1"
+        }
+      ]
+    },
+    {
+      "Id": "1b0366d9-2658-4a59-bb7c-cd12a31386c0",
+      "Name": "Terrain",
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "TerrainComponent",
+          "__enabled": true,
+          "ClipMapLodExtentTexels": 128,
+          "ClipMapLodLevels": 7,
+          "DebugView": "None",
+          "HeightMap": "textures/terrain/rust/heightmap/heighttexture.vtex",
+          "IsRustHeightmap": true,
+          "Material": "materials/rust_terrain.vmat",
+          "MaxHeightInInches": 36100,
+          "SplatMap0": "textures/terrain/rust/heightmap/splattexture0.vtex",
+          "SplatMap1": "textures/terrain/rust/heightmap/splattexture1.vtex",
+          "TerrainResolutionInInches": 39
+        },
+        {
+          "__type": "TerrainColliderComponent",
+          "__enabled": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "52a9cb6d-df54-4e11-afb0-c864e560688d",
+      "Name": "SkyBox",
+      "Enabled": true,
+      "Position": "3403,2296,17338.18",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "SkyBox2D",
+          "__enabled": true,
+          "SkyMaterial": "materials/skybox/light_test_sky_sunny02.vmat",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "cf4efed5-1ec9-4612-97c6-f5b0d8dc264d",
+      "Name": "Gradient Fog",
+      "Enabled": true,
+      "Position": "5000,5000,6962.303",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "GradientFog",
+          "__enabled": true,
+          "Color": "1,1,1,1",
+          "EndDistance": 50000,
+          "FalloffExponent": 1,
+          "Height": 15000,
+          "StartDistance": 5000,
+          "VerticalFalloffExponent": 3
+        }
+      ]
+    },
+    {
+      "Id": "0f1b76ac-f6ff-4bf5-b075-b7cd319fa960",
+      "Name": "Citizen Player",
+      "Enabled": true,
+      "Position": "-2631.387,-8680.031,13152.93",
+      "Rotation": "-0.00000003133283,0.00000000000000008927964,-0.5256777,0.8506842",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "CharacterController",
+          "__enabled": true,
+          "Acceleration": 10,
+          "GroundAngle": 45,
+          "Height": 64,
+          "IgnoreLayers": "",
+          "Radius": 16,
+          "StepHeight": 18
+        },
+        {
+          "__type": "PlayerController",
+          "__enabled": true,
+          "AnimationHelper": "0f1b76ac-f6ff-4bf5-b075-b7cd319fa960",
+          "Body": "48e0b8fa-9a88-4748-9c13-7af59f33974d",
+          "CameraDistance": 200,
+          "Eye": "420c47d5-4152-441a-b2f2-a4200728200e",
+          "FirstPerson": false,
+          "Gravity": "0,0,800"
+        },
+        {
+          "__type": "CitizenAnimation",
+          "__enabled": true,
+          "Height": 1,
+          "Target": "48e0b8fa-9a88-4748-9c13-7af59f33974d"
+        }
+      ],
+      "Children": [
+        {
+          "Id": "48e0b8fa-9a88-4748-9c13-7af59f33974d",
+          "Name": "Body",
+          "Enabled": true,
+          "Position": "0,0,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Components": [
+            {
+              "__type": "AnimatedModelComponent",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "CreateBoneObjects": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/citizen/citizen.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "Id": "420c47d5-4152-441a-b2f2-a4200728200e",
+          "Name": "EyePos",
+          "Enabled": true,
+          "Position": "0,0,64",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": ""
+        },
+        {
+          "Id": "e5252655-eab9-48db-a844-4572d52e16e7",
+          "Name": "Camera",
+          "Enabled": true,
+          "Position": "-200,0,64",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Components": [
+            {
+              "__type": "CameraComponent",
+              "__enabled": true,
+              "BackgroundColor": "0.33333,0.46275,0.52157,1",
+              "ClearFlags": "Color, Depth, Stencil",
+              "FieldOfView": 60,
+              "Orthographic": false,
+              "OrthographicHeight": 1204,
+              "ZFar": 500000,
+              "ZNear": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "a23dc0ea-356a-46dc-a91f-d636007fc80b",
+      "Name": "Rust box",
+      "Enabled": true,
+      "Position": "-2756.063,-9501.709,15276.17",
+      "Rotation": "-0.00000004808169,-0.0000000000000005976293,-0.8066769,0.5909929",
+      "Scale": "1,1,1",
+      "Tags": "solid",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/rust_cube.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Scale": "200,200,200",
+          "Surface": null
+        },
+        {
+          "__type": "PhysicsComponent",
+          "__enabled": true,
+          "Gravity": true,
+          "Static": false
+        }
+      ]
+    },
+    {
+      "Id": "8b4c8d8e-fa76-417e-8f1c-dc7e5b427125",
+      "Name": "Rust box",
+      "Enabled": true,
+      "Position": "-2689.47,-9291.08,15276.17",
+      "Rotation": "-0.00000004808169,-0.0000000000000005976293,-0.8066769,0.5909929",
+      "Scale": "0.75,0.75,0.75",
+      "Tags": "solid",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/rust_cube.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Scale": "200,200,200",
+          "Surface": null
+        },
+        {
+          "__type": "PhysicsComponent",
+          "__enabled": true,
+          "Gravity": true,
+          "Static": false
+        }
+      ]
+    },
+    {
+      "Id": "34a4c3b5-e2e3-47ce-84ff-dd1504892094",
+      "Name": "Rust box",
+      "Enabled": true,
+      "Position": "-2823.741,-9715.772,15276.17",
+      "Rotation": "-0.00000004808169,-0.0000000000000005976293,-0.8066769,0.5909929",
+      "Scale": "0.5,0.5,0.5",
+      "Tags": "solid",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/rust_cube.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Scale": "200,200,200",
+          "Surface": null
+        },
+        {
+          "__type": "PhysicsComponent",
+          "__enabled": true,
+          "Gravity": true,
+          "Static": false
+        }
+      ]
+    },
+    {
+      "Id": "67894202-7339-4046-b5a5-135e36f42a22",
+      "Name": "Rust box",
+      "Enabled": true,
+      "Position": "-2644.55,-9149.004,15276.17",
+      "Rotation": "-0.00000004808169,-0.0000000000000005976293,-0.8066769,0.5909929",
+      "Scale": "0.5,0.5,0.5",
+      "Tags": "solid",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/rust_cube.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Scale": "200,200,200",
+          "Surface": null
+        },
+        {
+          "__type": "PhysicsComponent",
+          "__enabled": true,
+          "Gravity": true,
+          "Static": false
+        }
+      ]
+    },
+    {
+      "Id": "86ec2b49-f134-46e1-8fa2-be19a699af46",
+      "Name": "Rust box",
+      "Enabled": true,
+      "Position": "-2668.219,-9223.865,15436.63",
+      "Rotation": "-0.00000004808169,-0.0000000000000005976293,-0.8066769,0.5909929",
+      "Scale": "0.5,0.5,0.5",
+      "Tags": "solid",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/rust_cube.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Scale": "200,200,200",
+          "Surface": null
+        },
+        {
+          "__type": "PhysicsComponent",
+          "__enabled": true,
+          "Gravity": true,
+          "Static": false
+        }
+      ]
+    },
+    {
+      "Id": "3c7957ea-b37a-4b00-ae41-518c9000a6f8",
+      "Name": "Rust box",
+      "Enabled": true,
+      "Position": "-2791.336,-9613.281,15436.63",
+      "Rotation": "-0.00000004808169,-0.0000000000000005976293,-0.8066769,0.5909929",
+      "Scale": "0.5,0.5,0.5",
+      "Tags": "solid",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": null,
+          "Model": "models/rust_cube.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Scale": "200,200,200",
+          "Surface": null
+        },
+        {
+          "__type": "PhysicsComponent",
+          "__enabled": true,
+          "Gravity": true,
+          "Static": false
+        }
+      ]
+    }
+  ],
+  "__references": [
+    "cubes.rust"
+  ]
+}

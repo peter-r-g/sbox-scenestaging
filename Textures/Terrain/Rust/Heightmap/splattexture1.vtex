@@ -1,0 +1,7 @@
+{
+  "Images": [
+    "textures/terrain/rust/heightmap/splattexture1.png"
+  ],
+  "OutputFormat": "RGBA8888",
+  "OutputTypeString": "2D"
+}

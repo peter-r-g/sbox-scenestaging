@@ -1,0 +1,7 @@
+{
+  "Images": [
+    "textures/terrain/rust/heightmap/heighttexture.png"
+  ],
+  "OutputTypeString": "2D",
+  "OutputFormat": "RGBA8888",
+}
